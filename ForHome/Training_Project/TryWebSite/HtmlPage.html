@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.2.1.min.js""></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("#btn").click(function () {
+
+                $.ajax({
+
+                    url: "http://localhost:64504/Service.svc/rest/GetCustomer",
+                    type: "GET",
+                    Accept: "application/json",
+                    success: function (resultdata) {
+
+                        $.each(resultdata, function (k, v) {
+
+                            var id = v.id;
+                            var name = v.name;
+                            var houseNumber = v.houseNumber;
+                            var houseNumber_Addition = v.houseNumber_Addition;
+                            var postcode = v.postcode;
+                            var city = v.city;
+                            var street = v.street;
+                            var telephone = v.telephone;
+                            var fax = v.fax;
+
+                            $("#tbl").append("<tr><td>" + id + "</td><td>" + name + "</td><td>" + houseNumber + "</td><td>" + houseNumber_Addition + "</td><td>" + postcode + "</td><td>" + city + "</td><td>" + street + "</td><td>" + telephone + "</td><td>" + fax + "</td></tr>")
+
+                        });
+                    },
+                    error: function (e) {
+                        alert("something went wrong!");
+                    }
+
+
+                });
+            });
+
+
+        });
+    </script>
+
+</head>
+<body>
+    <table id="tbl" border="1" style="width: 100%;">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>HouseNumber</td>
+            <td>HouseNumber_Addition</td>
+            <td>PostCode</td>
+            <td>City</td>
+            <td>Street</td>
+            <td>Telephone</td>
+            <td>Fax</td>
+        </tr>
+        
+    </table>
+    <input type="button" id ="btn" value="GetCustomers" />
+
+</body>
+</html>

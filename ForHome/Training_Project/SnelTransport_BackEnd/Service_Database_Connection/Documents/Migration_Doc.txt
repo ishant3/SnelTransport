@@ -1,0 +1,5 @@
+﻿Enable-Migrations -ContextTypeName PgDbContext -MigrationsDirectory Migrations\BookMigration
+
+add-migration -ConfigurationTypeName OnlyPostgres.Migrations.BookMigration.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName OnlyPostgres.Migrations.BookMigration.Configuration

@@ -1,0 +1,5 @@
+D:\CIMsolutions\SnelTransportFinal_Home\WcfService1\bin\WcfService1.dll.config
+D:\CIMsolutions\SnelTransportFinal_Home\WcfService1\bin\WcfService1.dll
+D:\CIMsolutions\SnelTransportFinal_Home\WcfService1\bin\WcfService1.pdb
+D:\CIMsolutions\SnelTransportFinal_Home\WcfService1\obj\Debug\WcfService1.dll
+D:\CIMsolutions\SnelTransportFinal_Home\WcfService1\obj\Debug\WcfService1.pdb

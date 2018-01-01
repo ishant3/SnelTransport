@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.microsoft.com/ws/2005/02/mex/bindings" location="http://localhost/Back-End/Service1.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/Back-End/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/Back-End/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/Back-End/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Back_End" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_GetCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertDistanceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDistanceInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertDistanceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDistanceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetOptimalRoute_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOptimalRoute" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetOptimalRoute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOptimalRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertOptimalRoute_Config_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOptimalRoute_Config" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertOptimalRoute_Config_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOptimalRoute_ConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetOptimalRoute_Config_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOptimalRoute_Config" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetOptimalRoute_Config_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOptimalRoute_ConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArticle" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertArticle" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateArticle" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteArticle" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrders" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrder" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetOrders_Detail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrders_Detail" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetOrders_Detail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrders_DetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertOrder_Detail_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrder_Detail" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertOrder_Detail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrder_DetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateOrder_Detail_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrder_Detail" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateOrder_Detail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrder_DetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteOrder_Detail_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrder_Detail" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteOrder_Detail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrder_DetailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetCustomer" message="tns:IService_GetCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetCustomerResponse" message="tns:IService_GetCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertCustomer" message="tns:IService_InsertCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertCustomerResponse" message="tns:IService_InsertCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateCustomer" message="tns:IService_UpdateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateCustomerResponse" message="tns:IService_UpdateCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteCustomer" message="tns:IService_DeleteCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteCustomerResponse" message="tns:IService_DeleteCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDistanceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertDistanceInfo" message="tns:IService_InsertDistanceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertDistanceInfoResponse" message="tns:IService_InsertDistanceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOptimalRoute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetOptimalRoute" message="tns:IService_GetOptimalRoute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetOptimalRouteResponse" message="tns:IService_GetOptimalRoute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOptimalRoute_Config">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertOptimalRoute_Config" message="tns:IService_InsertOptimalRoute_Config_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertOptimalRoute_ConfigResponse" message="tns:IService_InsertOptimalRoute_Config_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOptimalRoute_Config">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetOptimalRoute_Config" message="tns:IService_GetOptimalRoute_Config_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetOptimalRoute_ConfigResponse" message="tns:IService_GetOptimalRoute_Config_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArticle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetArticle" message="tns:IService_GetArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetArticleResponse" message="tns:IService_GetArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertArticle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertArticle" message="tns:IService_InsertArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertArticleResponse" message="tns:IService_InsertArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateArticle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateArticle" message="tns:IService_UpdateArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateArticleResponse" message="tns:IService_UpdateArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArticle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteArticle" message="tns:IService_DeleteArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteArticleResponse" message="tns:IService_DeleteArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetOrders" message="tns:IService_GetOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetOrdersResponse" message="tns:IService_GetOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertOrder" message="tns:IService_InsertOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertOrderResponse" message="tns:IService_InsertOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateOrder" message="tns:IService_UpdateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateOrderResponse" message="tns:IService_UpdateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteOrder" message="tns:IService_DeleteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteOrderResponse" message="tns:IService_DeleteOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrders_Detail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetOrders_Detail" message="tns:IService_GetOrders_Detail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetOrders_DetailResponse" message="tns:IService_GetOrders_Detail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder_Detail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertOrder_Detail" message="tns:IService_InsertOrder_Detail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertOrder_DetailResponse" message="tns:IService_InsertOrder_Detail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder_Detail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateOrder_Detail" message="tns:IService_UpdateOrder_Detail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateOrder_DetailResponse" message="tns:IService_UpdateOrder_Detail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder_Detail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteOrder_Detail" message="tns:IService_DeleteOrder_Detail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteOrder_DetailResponse" message="tns:IService_DeleteOrder_Detail_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="Service1">
+    <wsdl:port name="MetadataExchangeHttpBinding_IService" binding="i0:MetadataExchangeHttpBinding_IService">
+      <soap12:address location="http://localhost/Back-End/Service1.svc/soap" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost/Back-End/Service1.svc/soap</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

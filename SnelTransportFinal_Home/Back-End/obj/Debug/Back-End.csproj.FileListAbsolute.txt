@@ -23,3 +23,5 @@ D:\CIMsolutions\SnelTransportFinal_Home\Back-End\obj\Debug\Back-End.csproj.Gener
 D:\CIMsolutions\SnelTransportFinal_Home\Back-End\obj\Debug\Back-End.dll
 D:\CIMsolutions\SnelTransportFinal_Home\Back-End\obj\Debug\Back-End.pdb
 D:\CIMsolutions\SnelTransportFinal_Home\Back-End\obj\Debug\Back-End.csprojResolveAssemblyReference.cache
+D:\CIMsolutions\SnelTransportFinal_Home\Back-End\obj\Debug\Back_End.Migrations.AddingTruckNUmber_Config.resources
+D:\CIMsolutions\SnelTransportFinal_Home\Back-End\obj\Debug\Back_End.Migrations.trucknumber_DIstanceTable.resources

@@ -96,7 +96,14 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="unload_Time">Unload Time :</label>
                 <div class="col-sm-10">
-                    <input type="number" min='0.30' max='03.30' class="form-control" id="unload_Time" step='0.30' placeholder="Choose maximum unload time hh:mm" name="unload_Time" onkeydown="return false" value='0.30'>
+                    <input type="number" min='10' max='60' class="form-control" id="unload_Time" step='10' placeholder="Choose maximum unload time hh:mm" name="unload_Time" onkeydown="return false" value='30'>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="truck_Number">Available Truck(s) :</label>
+                <div class="col-sm-10">
+                    <input type="number" min='1' max='3' class="form-control" id="truck_Number" step='1' placeholder="Select Available Truck" name="truck_Number" onkeydown="return false" value='1'>
                 </div>
             </div>
 

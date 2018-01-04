@@ -22,7 +22,7 @@ namespace Back_End
             EntitiesContext ec = new EntitiesContext();
             customerList = (from cust in ec.Customers
                             orderby cust.Id
-                            select cust).Take(5).ToList();
+                            select cust).Skip(1).Take(7).ToList();
 
             if (customerList.Count()==0)
             {

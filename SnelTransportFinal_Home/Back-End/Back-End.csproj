@@ -95,6 +95,7 @@
     <Compile Include="Data.Entities\OptimalRouteAlgorithm.cs" />
     <Compile Include="Data.Entities\Orders.cs" />
     <Compile Include="Data.Entities\Order_Detail.cs" />
+    <Compile Include="Data.Entities\TryTest.cs" />
     <Compile Include="Data.Model\EntitiesContext.cs" />
     <Compile Include="Enum\ColorType.cs" />
     <Compile Include="Enum\OrderType.cs" />
@@ -104,6 +105,14 @@
     <Compile Include="Migrations\201712311748293_InitialDb.cs" />
     <Compile Include="Migrations\201712311748293_InitialDb.Designer.cs">
       <DependentUpon>201712311748293_InitialDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801041343048_AddingTruckNUmber_Config.cs" />
+    <Compile Include="Migrations\201801041343048_AddingTruckNUmber_Config.Designer.cs">
+      <DependentUpon>201801041343048_AddingTruckNUmber_Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801041413462_trucknumber_DIstanceTable.cs" />
+    <Compile Include="Migrations\201801041413462_trucknumber_DIstanceTable.Designer.cs">
+      <DependentUpon>201801041413462_trucknumber_DIstanceTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Service1.svc.cs">
@@ -127,6 +136,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712311748293_InitialDb.resx">
       <DependentUpon>201712311748293_InitialDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801041343048_AddingTruckNUmber_Config.resx">
+      <DependentUpon>201801041343048_AddingTruckNUmber_Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801041413462_trucknumber_DIstanceTable.resx">
+      <DependentUpon>201801041413462_trucknumber_DIstanceTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

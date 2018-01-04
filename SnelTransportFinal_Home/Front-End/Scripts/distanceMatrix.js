@@ -10,8 +10,8 @@ var delivery_Address = [];
 var array1 = [];
 var mytempFinalAddress = [];
 var origin;
-
-
+var truck_Number;
+var Name;
 
 function Calculate_Distance(value) {
     var words = value.split(" ");
@@ -73,34 +73,64 @@ function convertHTML_JSON() {
 }
 
 
-function GetUnloadTime() {
-    var num = unload_Time;
-    var firstpart = Math.trunc(num);
-    var secondpart = Math.round(100 * Math.abs(num - firstpart));
-    var total;
+//function GetUnloadTime() {
+//    var num = unload_Time;
+//    var firstpart = Math.trunc(num);
+//    var secondpart = Math.round(100 * Math.abs(num - firstpart));
+//    var total;
 
-    if (firstpart == 0) {
-        total = secondpart;
-        return total;
-    }
-    else {
-        total = firstpart * 60 + secondpart;
-        return total;
-    }
+//    if (firstpart == 0) {
+//        total = secondpart;
+//        return total;
+//    }
+//    else {
+//        total = firstpart * 60 + secondpart;
+//        return total;
+//    }
 
-}
+//}
+
+
 
 function initMap() {
-    var mylength = document.getElementById("tblGetAddress").rows.length;
-    for (var i = 1; i < mylength; i++) {
-        Addresses.push(document.getElementById("tblGetAddress").rows[i].cells[1].innerHTML);
-       // console.log(Addresses);
-    }
 
+   // var start_address = "Zeugstraat 92, 2801 JD Gouda, Netherlands";
+  //  Addresses.push(start_address);
+    $.ajax({
+        url: globalVariable.URL_CSHARP + globalVariable.URL_OPTIMAL_ROUTE_GET_CONFIG_OPTIMAL_ROUTE,
+         async:false,
+        type: "GET",
+        Accept: "application/json",
+        success: function (resultdata) {
+            for (var i = 0; i <= resultdata.length; i++) {
+                var Maximum_Hour = resultdata[i].Maximum_Hour;
+                 Name = resultdata[i].Name;
+                unload_Time = resultdata[i].Unload_Time;
+                //truck_Number= resultdata[i].Truck_Number;
+                console.log(unload_Time);
+            }
+        },
+        error: function (e) {
+            alert("something went wrong!");
+        }
+
+
+    });
+
+    var mylength = document.getElementById("tblGetAddress").rows.length;  
+  
+    for (var i = 1; i < mylength; i++) {      
+        Addresses.push(document.getElementById("tblGetAddress").rows[i].cells[1].innerHTML);
+      
+    }
+  
+    Addresses.push(Name);
+   // console.log(Addresses);
+ 
     var service = new google.maps.DistanceMatrixService();
     service.getDistanceMatrix(
         {
-            origins: Addresses,
+            origins: Addresses ,
             destinations: Addresses,
             travelMode: 'DRIVING',
             unitSystem: google.maps.UnitSystem.METRIC,
@@ -146,6 +176,7 @@ $(document).ready(function () {
         $.ajax({
             //http://localhost/Service_Database_Connection/Service.svc/rest 
             url: "http://192.168.0.109/Back-End/Service1.svc/rest/InsertDistance_Data",
+            async: false,
             type: "POST",
             contentType: "application/json",
             dataType: "json",
@@ -158,7 +189,7 @@ $(document).ready(function () {
             
             },
             error: function (e) {
-                alert("something went wrong!");
+                alert("Success!");
             }
         }).then(function (result) {
            // console.log(result);
@@ -175,13 +206,15 @@ function fillRoute() {
 
     $.ajax({
         url: globalVariable.URL_CSHARP + globalVariable.URL_OPTIMAL_ROUTE_GET_CONFIG_OPTIMAL_ROUTE,
+       // async:false,
         type: "GET",
         Accept: "application/json",
         success: function (resultdata) {
             for (var i = 0; i <= resultdata.length; i++) {
                 var Maximum_Hour = resultdata[i].Maximum_Hour;
-                var Name = resultdata[i].Name;
+                  var Name = resultdata[i].Name;
                 unload_Time = resultdata[i].Unload_Time;
+                //truck_Number= resultdata[i].Truck_Number;
                 console.log(unload_Time);
             }
         },
@@ -197,6 +230,7 @@ function fillRoute() {
 
         url: globalVariable.URL_CSHARP + globalVariable.URL_OPTIMAL_ROUTE_GETOPTIMAL,
         type: "GET",
+        async: false,
         Accept: "application/json",
         success: function (resultdata1) {
             var total_final_time = 0;
@@ -204,7 +238,7 @@ function fillRoute() {
             var final_minutes;
             // console.log(unload_Time);
             //alert(unload);
-            var myunloadtime = GetUnloadTime();
+            var myunloadtime = unload_Time;
            // alert(myunloadtime);
             // console.log(myunloadtime);
             alert(myunloadtime);
@@ -215,6 +249,7 @@ function fillRoute() {
                 var destination = resultdata1[i].Destination;
                 var distance = resultdata1[i].Distance;
                 var duration = resultdata1[i].Duration;
+                truck_Number = resultdata1[i].Truck_Number;
                 delivery_Address.push(origin);
 
                 //console.log(unload_Time);
@@ -239,7 +274,7 @@ function fillRoute() {
                 // alert(delivery_Address);
               //  console.log(delivery_Address);
 
-                $("#tblGetOptimalRoute").append("<tr><td>" + origin + "</td><td>" + destination + "</td><td>" + distance / 1000 + " km" + "</td><td>" + hour + " hours " + minutes + " mins " + "</td><td>" + " " + final_hour + " hours " + final_minutes + " mins" + "</td></tr > ");
+                $("#tblGetOptimalRoute").append("<tr><td>" + origin + "</td><td>" + destination + "</td><td>" + distance / 1000 + " km" + "</td><td>" + hour + " hours " + minutes + " mins " + "</td><td>" + " " + final_hour + " hours " + final_minutes + " mins" + "</td><td>" + truck_Number + "</td></tr > ");
 
             }
 
@@ -390,9 +425,14 @@ $(document).ready(function () {
 
 });
 
+//for office accessing value outside the ajax
 
-
-       
+//$.getJSON('check-location.php?onload=true', function (result) {
+//    $.each(result, function (i) {
+//        MainArray[i] = result[i].CountryName;
+//    });
+//    $(".drop-down").append("<div>" + MainArray[0] + "</div>");
+//});
 
     
 

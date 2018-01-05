@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get_Customer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/dropDown.css" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="Scripts/jquery-3.2.1.min.js"></script>  
+<script src="Scripts/distanceMatrix.js"></script> 
+<script src="Scripts/jquery.tabletojson.min.js"></script>
+<script src="Scripts/bootstrap.min.js"></script>  
+<script src="Scripts/config.js"></script>  
+<script src ="Scripts/getDeliveryOrderList.js"></script> 
+<script src="Scripts/get_Undelivered_Orders.js"></script>
+    
+
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAC20xjIzU7h-9DQkLnfNSBUYY7x9jCE5c"></script>
+ 
+     
+</head>
+<body>
+
+  <div class="navbar_I">
+  <a href="index.html">Home</a>  
+  <div class="dropdown_I">
+    <button class="dropbtn_I">Customer 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content_I">
+      <a href="GetCustomer.html">Get Customer</a>
+      <a href="#">Add Customer</a>
+      <a href="#">Edit Customer</a>
+      <a href="#">Delete Customer</a>
+    </div>
+  </div> 
+  <div class="dropdown_I">
+    <button class="dropbtn_I">Articles 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content_I">
+      <a href="#">Get Articles</a>
+      <a href="#">Add Articles</a>
+      <a href="#">Edit Articles</a>
+      <a href="#">Delete Articles</a>
+      
+    </div>
+  </div> 
+  <div class="dropdown_I">
+    <button class="dropbtn_I">Orders 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content_I">
+      <a href="#">Get Orders</a>
+      <a href="#">Add Orders</a>
+      <a href="#">Edit Orders</a>
+      <a href="#">Delete Orders</a>
+      
+    </div>
+  </div> 
+  <div class="dropdown_I">
+    <button class="dropbtn_I"> Optimal Route 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content_I">
+      <a href ="Configure_OptimalRoute.html">Configure Route Options</a>
+      <a href="FindOptimalRoute.html">Find Optimal Route</a>
+      
+  
+</div>
+     </div>
+</div>
+    
+    <h1> Find Optimal Route</h1>
+
+    <!--<table id="tblGetAddress" border="1" style="margin-left: 250px; margin-right: 100px; margin-top: 80px; width: 70%">
+        <tr>
+            <td>Name</td>
+            <td>DeliveryAddress</td>           
+        </tr>
+        
+    </table>
+    <input type="button" id ="btnDeliveryAddress" value="Get Delivery Address" style="margin-left: 850px; margin-top: 25px;"/>-->   
+
+
+    <table id="tblGetAddress" border="1" style="margin-left: 250px; margin-right: 100px; margin-top: 80px; width: 70%">
+        <tr>
+            <td>Name</td>
+            <td>DeliveryAddress</td>
+        </tr>
+
+    </table>
+    <input type="button" id="btnDeliveryAddress" value="Get UnDelivery Address"  onclick="Undeliver()"style="margin-left: 850px; margin-top: 25px;" />
+  
+
+    
+    <table id="tblGetDistance" border="1" style="margin-left: 250px; margin-right: 100px; margin-top: 80px; width: 70%; padding-top:10px;">
+        <tr>
+            <td>Origin</td>
+            <td>Destination</td>
+            <td>Distance</td>
+            <td>Duration</td>
+        </tr>
+    </table>
+    <div class="container">
+        <button type="submit" id="btnGoogleMatrix" class="btn btn-primary center-block " onclick="initMap()">Find Distance</button>
+    </div>
+    <!--<button id=" btnGoogleMatrix" style="margin-left: 850px; margin-top: 25px;" onclick="initMap()"> Find Distance </button>-->
+    <!--<input type="button" id ="btnInsert" value=" Send  Distance"   style="margin-left: 850px; margin-top: 25px;" />-->
+    <div class="container">
+        <button type="submit" id="btnInsert" class="btn btn-primary center-block ">Send  Distance</button>
+    </div>
+    <table id="tblGetOptimalRoute" border="1" style="margin-left: 250px; margin-right: 100px; margin-top: 80px; width: 70%; padding-top:10px;">
+        <tr>
+            <td>Origin</td>
+            <td>Destination</td>
+            <td>Distance</td>
+            <td>Duration</td>
+            <td>TotalTime</td>
+            <td>TruckNumber</td>
+        </tr>
+    </table>
+    <!--<input type="button" id ="btnOptimalRoute" value="Find Optimal Route"  onclick="fillRoute()"  />-->
+    <div class="container">
+        <button type="submit" id="btnOptimalRoute" class="btn btn-primary center-block " onclick="fillRoute()">Find Optimal Route</button>
+    </div>
+
+    <table id="tblOptimalAddress" border="1" style="margin-left: 250px; margin-right: 100px; margin-top: 80px; width: 70%">
+        <tr>
+
+            <td>DeliveryAddress</td>
+        </tr>
+
+    </table>
+    <!--<input type="button" id ="btnDeliveryOptimalAddress" value="Get Optimal Address" style="margin-left: 1350px; margin-top: 25px;"/>-->
+    <div class="container">
+        <button type="submit" id="btnDeliveryOptimalAddress" class="btn btn-primary center-block ">Get Optimal Address</button>
+    </div>
+    <table id="tblNonDeliveryAddress" border="1" style="margin-left: 250px; margin-right: 100px; margin-top: 80px; width: 70%">
+        <tr>
+
+            <td>NonDeliveryAddress</td>
+        </tr>
+
+    </table>
+    <!--<input type="button" id ="btnNonDeliveryOptimalAddress" value="Get Non delivery Address" style="margin-left: 1350px; margin-top: 25px;"/>-->
+    <div class="container">
+        <button type="submit" id="btnNonDeliveryOptimalAddress" class="btn btn-primary center-block ">Get Non delivery Address</button>
+    </div>
+
+
+
+    <div id="result"></div>
+    <span id="lblData"></span>
+
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Get_Customer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/dropDown.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/config.js"></script>
+    <script src="Scripts/configure_OptimalRoute.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/GetCustomer.js"> </script>  
+   
+
+</head>
+<body>
+
+    <div class="navbar_I">
+        <a href="index.html">Home</a>
+        <div class="dropdown_I">
+            <button class="dropbtn_I">
+                Customer 
+      <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content_I">
+                <a href="GetCustomer.html">Get Customer</a>
+                <a href="#">Add Customer</a>
+                <a href="#">Edit Customer</a>
+                <a href="#">Delete Customer</a>
+            </div>
+        </div>
+        <div class="dropdown_I">
+            <button class="dropbtn_I">
+                Articles 
+      <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content_I">
+                <a href="#">Get Articles</a>
+                <a href="#">Add Articles</a>
+                <a href="#">Edit Articles</a>
+                <a href="#">Delete Articles</a>
+
+            </div>
+        </div>
+        <div class="dropdown_I">
+            <button class="dropbtn_I">
+                Orders 
+      <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content_I">
+                <a href="#">Get Orders</a>
+                <a href="#">Add Orders</a>
+                <a href="#">Edit Orders</a>
+                <a href="#">Delete Orders</a>
+
+            </div>
+        </div>
+        <div class="dropdown_I">
+            <button class="dropbtn_I">
+                Optimal Route 
+      <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content_I">
+                <a href="Configure_OptimalRoute.html">Configure Route Options</a>
+                <a href="FindOptimalRoute.html">Find Optimal Route</a>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <h2>Configure Optimal Route Options</h2>
+
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="address">Start Address:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="startAddress" placeholder="Enter Full Starting Address" name="startAddress" value="Zeugstraat 92, 2801 JD Gouda, Netherlands">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="maximum_Hour">Maximum Hour :</label>
+                <div class="col-sm-10">
+                    <input type="number" min='1' max='12' class="form-control" id="maximum_Hour" placeholder="Choose maximum hour Truck/Day" name="maximum_Hour" onkeydown="return false" value='8'>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="unload_Time">Unload Time :</label>
+                <div class="col-sm-10">
+                    <input type="number" min='10' max='60' class="form-control" id="unload_Time" step='10' placeholder="Choose maximum unload time hh:mm" name="unload_Time" onkeydown="return false" value='30'>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="truck_Number">Available Truck(s) :</label>
+                <div class="col-sm-10">
+                    <input type="number" min='1' max='3' class="form-control" id="truck_Number" step='1' placeholder="Select Available Truck" name="truck_Number" onkeydown="return false" value='1'>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-default" id="sendConfigProperty">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+</body>
+</html>

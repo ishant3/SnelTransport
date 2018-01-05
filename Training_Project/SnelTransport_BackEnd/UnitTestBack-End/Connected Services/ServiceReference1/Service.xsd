@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Service_Database_Connection" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Service_Database_Connection" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomer" nillable="true" type="tns:ArrayOfCustomer" />
+  <xs:complexType name="Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HouseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="ArrayOfDistance_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Distance_Table" nillable="true" type="tns:Distance_Table" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDistance_Table" nillable="true" type="tns:ArrayOfDistance_Table" />
+  <xs:complexType name="Distance_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Distance" type="xs:int" />
+      <xs:element minOccurs="0" name="Duration" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Origin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Distance_Table" nillable="true" type="tns:Distance_Table" />
+  <xs:complexType name="ConfigOptimalRoute">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Maximum_Hour" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unload_Time" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConfigOptimalRoute" nillable="true" type="tns:ConfigOptimalRoute" />
+  <xs:complexType name="ArrayOfConfigOptimalRoute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConfigOptimalRoute" nillable="true" type="tns:ConfigOptimalRoute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConfigOptimalRoute" nillable="true" type="tns:ArrayOfConfigOptimalRoute" />
+  <xs:complexType name="ArrayOfArticle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Article" nillable="true" type="tns:Article" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArticle" nillable="true" type="tns:ArrayOfArticle" />
+  <xs:complexType name="Article">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Color" type="tns:ColorType" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:double" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Article" nillable="true" type="tns:Article" />
+  <xs:simpleType name="ColorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GEEN" />
+      <xs:enumeration value="ZWART" />
+      <xs:enumeration value="ZILVER" />
+      <xs:enumeration value="WIT" />
+      <xs:enumeration value="GRIJS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ColorType" nillable="true" type="tns:ColorType" />
+  <xs:complexType name="ArrayOfOrders">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Orders" nillable="true" type="tns:Orders" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrders" nillable="true" type="tns:ArrayOfOrders" />
+  <xs:complexType name="Orders">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="Delivered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderDetails" nillable="true" type="tns:ArrayOfOrder_Detail" />
+      <xs:element minOccurs="0" name="Revceived" type="xs:boolean" />
+      <xs:element minOccurs="0" name="dateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="orderType" type="tns:OrderType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Orders" nillable="true" type="tns:Orders" />
+  <xs:complexType name="ArrayOfOrder_Detail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order_Detail" nillable="true" type="tns:Order_Detail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrder_Detail" nillable="true" type="tns:ArrayOfOrder_Detail" />
+  <xs:complexType name="Order_Detail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Article" nillable="true" type="tns:Article" />
+      <xs:element minOccurs="0" name="ArticleId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Orders" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Order_Detail" nillable="true" type="tns:Order_Detail" />
+  <xs:simpleType name="OrderType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BACKORDER" />
+      <xs:enumeration value="ORDER" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderType" nillable="true" type="tns:OrderType" />
+</xs:schema>

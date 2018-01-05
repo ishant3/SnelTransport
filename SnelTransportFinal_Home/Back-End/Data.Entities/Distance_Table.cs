@@ -42,5 +42,11 @@ namespace Back_End
         [Required]
         public int Duration { get; set; }
 
+        [DataMember]
+        [Column("Truck_Number")] 
+        public int Truck_Number { get; set; }
+
+
+
     }
 }

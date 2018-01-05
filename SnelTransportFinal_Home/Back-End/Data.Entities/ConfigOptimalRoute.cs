@@ -29,6 +29,13 @@ namespace Back_End
         [Required]
         public decimal Unload_Time { get; set; }
 
+        [DataMember]
+        [Column("Truck_Number")]
+        [Required]
+        public int Truck_Number { get; set; }
+
+
+
 
     }
 }

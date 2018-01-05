@@ -1,0 +1,87 @@
+﻿ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get_Customer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/dropDown.css" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script	src="Scripts/jquery-3.2.1.min.js"></script>
+<script src="Scripts/bootstrap.min.js"></script>
+<script src="Scripts/config.js"></script>
+<script src ="Scripts/GetCustomer.js"> </script>  
+
+     
+</head>
+<body>
+
+  <div class="navbar_I">
+  <a href="index.html">Home</a>  
+  <div class="dropdown_I">
+    <button class="dropbtn_I">Customer 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content_I">
+      <a href="GetCustomer.html">Get Customer</a>
+      <a href="#">Add Customer</a>
+      <a href="#">Edit Customer</a>
+      <a href="#">Delete Customer</a>
+    </div>
+  </div> 
+  <div class="dropdown_I">
+    <button class="dropbtn_I">Articles 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content_I">
+      <a href="#">Get Articles</a>
+      <a href="#">Add Articles</a>
+      <a href="#">Edit Articles</a>
+      <a href="#">Delete Articles</a>
+      
+    </div>
+  </div> 
+  <div class="dropdown_I">
+    <button class="dropbtn_I">Orders 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content_I">
+      <a href="#">Get Orders</a>
+      <a href="#">Add Orders</a>
+      <a href="#">Edit Orders</a>
+      <a href="#">Delete Orders</a>
+      
+    </div>
+  </div> 
+    <div class="dropdown_I">
+    <button class="dropbtn_I"> Optimal Route 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content_I">
+      <a href ="Configure_OptimalRoute.html">Configure Route Options</a>
+      <a href="FindOptimalRoute.html">Find Optimal Route</a>
+      
+  
+</div>
+     </div>
+</div>
+    
+    <h1>GEt Customer Informations</h1>
+
+    <table id="tbl" border="1" style="margin-left: 250px; margin-right: 100px; margin-top: 80px; width: 70%">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Street</td>
+            <td>HouseNumber</td>
+            <td>PostCode</td>
+            <td>City</td>           
+            <td>Telephone</td>
+            <td>Fax</td>
+        </tr>
+        
+    </table>
+    <input type="button" id ="btnGetCustomer" value="GetCustomers" style="margin-left: 1100px; margin-top: 25px;" />
+</body>
+</html>
